@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
   <link rel="stylesheet" href="css/javascript01.css">
-  <script src= "js/javascript01.js"></script>
 </head>
 <body>
 
@@ -58,6 +57,16 @@
         <audio data-key="74" src="sounds/snare.wav"></audio>
         <audio data-key="75" src="sounds/tom.wav"></audio>
         <audio data-key="76" src="sounds/tink.wav"></audio>
+
+        <script>
+          window.addEventListener('keydown', function(e){
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            console.log(audio);
+            if(!audio) return; //stop the function from running all together
+            audio.play();
+            // Using e is just a short for event.
+          });
+        </script>
 
 
     </body>
